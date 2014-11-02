@@ -54,9 +54,25 @@
     
     
     
+    
+    // configuration of sparklineView
+    
+    // takes data in the form of an NSArray of NSNumbers (interpreted at floatValues)
+    
     [self.testSparkLineViewOutlet setDataToGraphArray:workingMutableArray];
+    
+    
+    
+    // some color parameters
+    
     [self.testSparkLineViewOutlet setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.02]];
+    [self.testSparkLineViewOutlet setLineStrokeColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.2 alpha:1.0]];
     [self.testSparkLineViewOutlet setEndPointColor:[UIColor colorWithRed:1.0 green:0 blue:0 alpha:1.0]];
+    [self.testSparkLineViewOutlet setOvalDiameter:5];
+
+    
+    // redraw
+    
     [self.testSparkLineViewOutlet setNeedsDisplay];
     
     
