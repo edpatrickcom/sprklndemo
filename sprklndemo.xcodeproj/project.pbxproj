@@ -14,6 +14,7 @@
 		58C66FB01A06A26B00D9011E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C66FAF1A06A26B00D9011E /* Images.xcassets */; };
 		58C66FB31A06A26B00D9011E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C66FB11A06A26B00D9011E /* LaunchScreen.xib */; };
 		58C66FBF1A06A26C00D9011E /* sprklndemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C66FBE1A06A26C00D9011E /* sprklndemoTests.m */; };
+		58C66FCA1A06A32900D9011E /* sparklineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C66FC91A06A32900D9011E /* sparklineView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		58C66FB81A06A26B00D9011E /* sprklndemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sprklndemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C66FBD1A06A26B00D9011E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C66FBE1A06A26C00D9011E /* sprklndemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sprklndemoTests.m; sourceTree = "<group>"; };
+		58C66FC81A06A32900D9011E /* sparklineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sparklineView.h; sourceTree = "<group>"; };
+		58C66FC91A06A32900D9011E /* sparklineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sparklineView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				58C66FA71A06A26A00D9011E /* AppDelegate.m */,
 				58C66FA91A06A26A00D9011E /* ViewController.h */,
 				58C66FAA1A06A26A00D9011E /* ViewController.m */,
+				58C66FC81A06A32900D9011E /* sparklineView.h */,
+				58C66FC91A06A32900D9011E /* sparklineView.m */,
 				58C66FAC1A06A26A00D9011E /* Main.storyboard */,
 				58C66FAF1A06A26B00D9011E /* Images.xcassets */,
 				58C66FB11A06A26B00D9011E /* LaunchScreen.xib */,
@@ -221,6 +226,7 @@
 			files = (
 				58C66FAB1A06A26A00D9011E /* ViewController.m in Sources */,
 				58C66FA81A06A26A00D9011E /* AppDelegate.m in Sources */,
+				58C66FCA1A06A32900D9011E /* sparklineView.m in Sources */,
 				58C66FA51A06A26A00D9011E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +418,7 @@
 				58C66FC41A06A26C00D9011E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58C66FC51A06A26C00D9011E /* Build configuration list for PBXNativeTarget "sprklndemoTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +427,7 @@
 				58C66FC71A06A26C00D9011E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
