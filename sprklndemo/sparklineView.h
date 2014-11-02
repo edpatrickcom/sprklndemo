@@ -25,6 +25,7 @@
 @property (strong,nonatomic) UIColor *endPointColor;
 
 @property (nonatomic) float lineStrokeWidth;
+@property (nonatomic) float ovalDiameter;
 
 
 

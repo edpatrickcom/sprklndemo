@@ -39,6 +39,7 @@
         self.lineStrokeWidth = 1;
         self.lineStrokeColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         self.endPointColor   = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
+        self.ovalDiameter    = 5;
 
         
     }
@@ -57,7 +58,8 @@
         self.lineStrokeWidth = 1;
         self.lineStrokeColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         self.endPointColor   = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-        
+        self.ovalDiameter    = 5;
+
         
     }
     
@@ -76,7 +78,8 @@
         self.lineStrokeWidth = 1;
         self.lineStrokeColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         self.endPointColor   = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-        
+        self.ovalDiameter    = 5;
+
         
     }
     
@@ -108,18 +111,8 @@
         
     }
     
-    
-    
-
-    
     [self computeBoundsAndScale];
 
-    
-    
-    
-    // scaleValue == frame.height / deltaValue
-    // magnitude == currentValue - minValue
-    // drawValue == magnitude * scaleValue
     
     
     int i;
@@ -128,56 +121,59 @@
     float currentY;
 
     
-    // Start the Line Drawing
+    // Begin line drawing
     
     UIBezierPath* bezierPath = UIBezierPath.bezierPath;
 
     
-    
     for (i=0; i<[self.dataToGraphArray count]; i++) {
-        
         
         currentX = [self computeXwithIndex:i];
         currentY = [self computeYwithFloat:[[self.dataToGraphArray objectAtIndex:i] floatValue]];
         
-        
-        
         if (i == 0) {
             
-            // Line Drawing
-            
             [bezierPath moveToPoint: CGPointMake(currentX,currentY)];
-
-            // Oval Drawing
-            
-            [self drawOvalAtX:currentX andY:currentY];
-            
             
         } else {
             
-            // Line Drawing
-            
             [bezierPath addLineToPoint: CGPointMake(currentX, currentY)];
-            
-            // Oval Drawing
-            
-            if (i == [self.dataToGraphArray count] - 1) {
-                
-                [self drawOvalAtX:currentX andY:currentY];
-                
-            }
-            
+    
         }
         
     }
     
-
-    
-    // Complete the Line Drawing
+    // Complete the line drawing
     
     [self.lineStrokeColor setStroke];
     bezierPath.lineWidth = self.lineStrokeWidth;
     [bezierPath stroke];
+
+    
+    
+    
+    
+    // Beginning point oval
+    
+    currentX = [self computeXwithIndex:0];
+    currentY = [self computeYwithFloat:[[self.dataToGraphArray objectAtIndex:0] floatValue]];
+    
+    [self drawOvalAtX:currentX andY:currentY];
+    
+    
+    
+    
+    // Ending point oval
+    
+    int last = (int) [self.dataToGraphArray count] - 1;
+
+    currentX = [self computeXwithIndex:last];
+    currentY = [self computeYwithFloat:[[self.dataToGraphArray objectAtIndex:last] floatValue]];
+    
+    [self drawOvalAtX:currentX andY:currentY];
+
+
+    
 
     
     
@@ -259,32 +255,26 @@
 }
 
 
-
-
 - (float)computeXwithIndex:(int)value {
-    
-    // not strictly necessary
-    
-    if ([self.dataToGraphArray count] < 1) { return 0; }
-    
-    
-    
-    // the main calculation
     
     float xScale = ( self.frame.size.width - self.insetHorizontal) / ([self.dataToGraphArray count] - 1);
     
     return (xScale * value) + (self.insetHorizontal / 2);
     
-    
-    
 }
+
+
+
 
 
 #pragma mark - Extra Drawing Functions
 
 - (void)drawOvalAtX:(float)x andY:(float)y {
     
-    UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(x - 2.5, y - 2.5, 5, 5)];
+    UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(x - (self.ovalDiameter/2),
+                                                                                y - (self.ovalDiameter/2),
+                                                                                self.ovalDiameter,
+                                                                                self.ovalDiameter)];
     [self.endPointColor setFill];
     [ovalPath fill];
 
