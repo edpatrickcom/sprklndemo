@@ -69,6 +69,8 @@
     [self.testSparkLineViewOutlet setLineStrokeColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.2 alpha:1.0]];
     [self.testSparkLineViewOutlet setEndPointColor:[UIColor colorWithRed:1.0 green:0 blue:0 alpha:1.0]];
     [self.testSparkLineViewOutlet setOvalDiameter:5];
+    [self.testSparkLineViewOutlet setDrawBeginningPoint:YES];
+    [self.testSparkLineViewOutlet setDrawEndPoint:YES];
 
     
     // redraw

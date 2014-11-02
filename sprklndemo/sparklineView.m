@@ -40,6 +40,8 @@
         self.lineStrokeColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         self.endPointColor   = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
         self.ovalDiameter    = 5;
+        self.drawBeginningPoint = YES;
+        self.drawEndPoint = YES;
 
         
     }
@@ -59,6 +61,9 @@
         self.lineStrokeColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         self.endPointColor   = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
         self.ovalDiameter    = 5;
+        self.drawBeginningPoint = YES;
+        self.drawEndPoint = YES;
+
 
         
     }
@@ -79,6 +84,9 @@
         self.lineStrokeColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         self.endPointColor   = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
         self.ovalDiameter    = 5;
+        self.drawBeginningPoint = YES;
+        self.drawEndPoint = YES;
+
 
         
     }
@@ -155,22 +163,32 @@
     
     // Beginning point oval
     
-    currentX = [self computeXwithIndex:0];
-    currentY = [self computeYwithFloat:[[self.dataToGraphArray objectAtIndex:0] floatValue]];
+    if (self.drawBeginningPoint) {
+        
+        currentX = [self computeXwithIndex:0];
+        currentY = [self computeYwithFloat:[[self.dataToGraphArray objectAtIndex:0] floatValue]];
+        
+        [self drawOvalAtX:currentX andY:currentY];
+
+    }
     
-    [self drawOvalAtX:currentX andY:currentY];
     
     
     
     
     // Ending point oval
     
-    int last = (int) [self.dataToGraphArray count] - 1;
+    if (self.drawEndPoint) {
+        
+        int last = (int) [self.dataToGraphArray count] - 1;
+        
+        currentX = [self computeXwithIndex:last];
+        currentY = [self computeYwithFloat:[[self.dataToGraphArray objectAtIndex:last] floatValue]];
+        
+        [self drawOvalAtX:currentX andY:currentY];
 
-    currentX = [self computeXwithIndex:last];
-    currentY = [self computeYwithFloat:[[self.dataToGraphArray objectAtIndex:last] floatValue]];
+    }
     
-    [self drawOvalAtX:currentX andY:currentY];
 
 
     

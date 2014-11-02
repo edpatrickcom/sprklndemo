@@ -27,7 +27,8 @@
 @property (nonatomic) float lineStrokeWidth;
 @property (nonatomic) float ovalDiameter;
 
-
+@property (nonatomic) BOOL drawBeginningPoint;
+@property (nonatomic) BOOL drawEndPoint;
 
 
 
