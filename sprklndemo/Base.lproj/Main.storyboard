@@ -17,26 +17,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Spark Line View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxT-Eg-3St">
-                                <rect key="frame" x="100" y="171" width="400" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QkO-bv-Jsd" customClass="sparklineView">
+                                <rect key="frame" x="36" y="200" width="528" height="100"/>
+                                <color key="backgroundColor" white="0.90240293560606066" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample SparklineView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlU-rU-iQP">
+                                <rect key="frame" x="215" y="325" width="171" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QkO-bv-Jsd" customClass="sparklineView">
-                                <rect key="frame" x="100" y="200" width="400" height="100"/>
-                                <color key="backgroundColor" white="0.90240293560606066" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="MxT-Eg-3St" secondAttribute="centerX" id="6Ao-HM-zpJ"/>
                             <constraint firstAttribute="centerY" secondItem="QkO-bv-Jsd" secondAttribute="centerY" id="782-nV-DOW"/>
                             <constraint firstAttribute="centerX" secondItem="QkO-bv-Jsd" secondAttribute="centerX" id="KVc-uC-qdf"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="QkO-bv-Jsd" secondAttribute="bottom" constant="300" id="Mmz-ZX-RNj"/>
+                            <constraint firstItem="QkO-bv-Jsd" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="180" id="Ng2-bt-hcg"/>
+                            <constraint firstItem="QkO-bv-Jsd" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Ngt-uk-Mhr"/>
+                            <constraint firstItem="QkO-bv-Jsd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="RQF-gC-VnF"/>
+                            <constraint firstAttribute="centerX" secondItem="QkO-bv-Jsd" secondAttribute="centerX" id="SYl-Dy-eZs"/>
+                            <constraint firstItem="WlU-rU-iQP" firstAttribute="centerX" secondItem="QkO-bv-Jsd" secondAttribute="centerX" id="Twr-Y7-hsS"/>
+                            <constraint firstAttribute="centerY" secondItem="QkO-bv-Jsd" secondAttribute="centerY" id="gOx-27-jbA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QkO-bv-Jsd" secondAttribute="trailing" constant="20" id="lFL-u8-aDh"/>
-                            <constraint firstItem="QkO-bv-Jsd" firstAttribute="top" secondItem="MxT-Eg-3St" secondAttribute="bottom" constant="8" id="tLa-Vy-iE0"/>
+                            <constraint firstItem="WlU-rU-iQP" firstAttribute="top" secondItem="QkO-bv-Jsd" secondAttribute="bottom" constant="25" id="oCR-UM-sBy"/>
                             <constraint firstItem="QkO-bv-Jsd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="xPW-Sq-1n0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="782-nV-DOW"/>
+                                <exclude reference="KVc-uC-qdf"/>
+                                <exclude reference="SYl-Dy-eZs"/>
+                                <exclude reference="gOx-27-jbA"/>
+                                <exclude reference="lFL-u8-aDh"/>
+                                <exclude reference="xPW-Sq-1n0"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="testSparkLineViewOutlet" destination="QkO-bv-Jsd" id="dNo-jW-Dys"/>

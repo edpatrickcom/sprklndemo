@@ -119,6 +119,10 @@
         
     }
     
+    
+    
+    // compute the metrics needed for drawing
+    
     [self computeBoundsAndScale];
 
     
